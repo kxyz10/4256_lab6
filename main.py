@@ -102,7 +102,19 @@ print(matrix_to_dict(m))
 
 #convert a matrix representation of a graph to a list representation.
 def matrix_to_list(m):
-  return 
+  lis = []
+  height = len(m)
+  length = len(m[0])
+  h = 0
+  while h < height:
+    l = 0
+    while l < length:
+      if m[h][l] == 1:
+        if (l,h) not in lis:
+          lis.append((h,l))
+      l += 1
+    h += 1
+  return lis
 
 # Your code goes here.
 m = [[0, 1, 1, 0, 0],
