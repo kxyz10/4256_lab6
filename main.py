@@ -69,7 +69,20 @@ for row in result:
 
 #convert a matrix representation of a graph to a dictionary representation.
 def matrix_to_dict(m):
-  return
+  d = {}
+  height = len(m)
+  length = len(m[0])
+  h = 0
+  while h < height:
+    l = 0
+    while l < length:
+      if h not in d:
+        d[h] = []
+      if m[h][l] == 1:
+        d[h].append(l)
+      l += 1
+    h += 1
+  return d
 
 # Your code goes here.
 m = [[0, 1, 1, 0, 0],
@@ -84,7 +97,6 @@ print(matrix_to_dict(m))
 # 1: [0, 2, 4],
 # 2: [0, 1, 3],
 # 3: [2, 4],
-5
 # 4: [1, 3]}
 
 
