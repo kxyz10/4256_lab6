@@ -38,10 +38,24 @@ print(list_to_dict(l))
 
 #convert a list representation of a graph to a matrix representation.
 def list_to_matrix(l):
-  m = [[]]
+  m = []
+  max_edge = 0
   for edge in l:
-    m[edge[0]][edge[1]] = 1
-    m[edge[1]][edge[0]] = 1
+    if edge[0] > max_edge:
+      max_edge = edge[0]
+  # print(max_edge)
+  max_edge += 1
+
+  i = 0
+  while i <= max_edge:
+    m.append([0] * max_edge)
+    i += 1
+
+  
+  print(m)
+  # for edge in l:
+  #   m[edge[0]][edge[1]] = 1
+  #   m[edge[1]][edge[0]] = 1
   return m
 
 # Your code goes here.
